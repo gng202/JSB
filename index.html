@@ -5,10 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Café 1984 - Premium Coffee Experience</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Link to external CSS file instead of inline styles -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- SLIDER SECTION -->
+    <section class="slider-section">
+        <div id="cafeSlider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?w=1600" class="d-block w-100 slider-img" alt="Coffee">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1600" class="d-block w-100 slider-img" alt="Cafe interior">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1600" class="d-block w-100 slider-img" alt="Pastries">
+                </div>
+
+            </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#cafeSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon slider-control"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#cafeSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon slider-control"></span>
+            </button>
+        </div>
+    </section>
+
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
@@ -36,11 +67,15 @@
                     <p>Experience exceptional specialty coffee in a thoughtfully designed space where every detail matters.</p>
                     <button class="btn btn-primary-custom">Explore Menu</button>
                 </div>
+
                 <div class="col-lg-6">
                     <div style="background-color: var(--light-bg); border-radius: var(--border-radius); height: 400px; display: flex; align-items: center; justify-content: center;">
-                        <img src="https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Y29mZmVlfGVufDB8fDB8fHww" alt="Coffee" style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--border-radius);">
+                        <img src="https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?w=400&auto=format&fit=crop&q=60" 
+                             alt="Coffee" 
+                             style="width: 100%; height: 100%; object-fit: cover; border-radius: var(--border-radius);">
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -55,10 +90,10 @@
                 <div class="col-md-6 ps-md-4">
                     <h2>Our Story</h2>
                     <p class="about-text">
-                        Since 1984, Café 1984 has been a sanctuary for coffee lovers and creative minds. We craft not just coffee, but an experience—where quality meets simplicity, and every detail is intentional.
+                        Since 1984, Café 1984 has been a sanctuary for coffee lovers and creative minds.
                     </p>
                     <p class="about-text">
-                        Our beans are carefully sourced from ethical suppliers worldwide, roasted fresh in small batches, and prepared with precision by our passionate team.
+                        Our beans are carefully sourced from ethical suppliers worldwide.
                     </p>
                 </div>
             </div>
@@ -74,28 +109,30 @@
                     <div class="product-card">
                         <div class="product-icon">☕</div>
                         <h3>Signature Blend</h3>
-                        <p>Our house specialty—a perfectly balanced, hand-crafted coffee that defines our brand.</p>
+                        <p>Our house specialty—a perfectly balanced, hand-crafted coffee.</p>
                     </div>
                 </div>
+
                 <div class="col-md-4 mb-4">
                     <div class="product-card">
                         <div class="product-icon">🥐</div>
                         <h3>Fresh Pastries</h3>
-                        <p>Artisan pastries baked daily, thoughtfully paired with your favorite brew.</p>
+                        <p>Artisan pastries baked daily.</p>
                     </div>
                 </div>
+
                 <div class="col-md-4 mb-4">
                     <div class="product-card">
                         <div class="product-icon">🍰</div>
                         <h3>Seasonal Treats</h3>
-                        <p>Limited edition creations crafted with the finest, carefully selected ingredients.</p>
+                        <p>Limited edition creations.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Features -->
     <section class="features">
         <div class="container">
             <h2>Why Choose Us</h2>
@@ -105,33 +142,37 @@
                         <div class="feature-icon">✓</div>
                         <div>
                             <h3>Premium Quality</h3>
-                            <p>Single-origin beans sourced responsibly from the world's finest coffee regions.</p>
+                            <p>Single-origin beans sourced responsibly.</p>
                         </div>
                     </div>
+
                     <div class="feature-item">
                         <div class="feature-icon">✓</div>
                         <div>
                             <h3>Minimalist Design</h3>
-                            <p>Clean, thoughtful spaces designed to inspire work, reflection, and connection.</p>
+                            <p>Thoughtful spaces designed to inspire.</p>
                         </div>
                     </div>
                 </div>
+
                 <div class="col-md-6">
                     <div class="feature-item">
                         <div class="feature-icon">✓</div>
                         <div>
                             <h3>Expert Baristas</h3>
-                            <p>Certified professionals who craft each cup with passion, precision, and care.</p>
+                            <p>Each cup crafted with precision.</p>
                         </div>
                     </div>
+
                     <div class="feature-item">
                         <div class="feature-icon">✓</div>
                         <div>
                             <h3>Community Focused</h3>
-                            <p>A welcoming gathering place for creatives, professionals, and coffee enthusiasts.</p>
+                            <p>A welcoming gathering place.</p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -142,61 +183,52 @@
             <h2>Menu</h2>
             <div class="row">
                 <div class="col-md-6">
-                    <h4 style="color: var(--primary-dark); font-weight: 600; margin-bottom: 1.5rem; margin-top: 0;">HOT BEVERAGES</h4>
+                    <h4 style="color: var(--primary-dark); font-weight: 600;">HOT BEVERAGES</h4>
+
                     <div class="menu-item">
                         <h4>Espresso <span class="menu-price">$3.50</span></h4>
-                        <p class="menu-description">Double shot of our signature blend</p>
+                        <p class="menu-description">Double shot of our blend</p>
                     </div>
+
                     <div class="menu-item">
                         <h4>Cappuccino <span class="menu-price">$4.50</span></h4>
-                        <p class="menu-description">Perfect balance of espresso, steamed milk & foam</p>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Latte <span class="menu-price">$4.50</span></h4>
-                        <p class="menu-description">Smooth espresso with velvety steamed milk</p>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Americano <span class="menu-price">$3.75</span></h4>
-                        <p class="menu-description">Espresso with hot water for a classic taste</p>
+                        <p class="menu-description">Steamed milk & foam</p>
                     </div>
                 </div>
+
                 <div class="col-md-6">
-                    <h4 style="color: var(--primary-dark); font-weight: 600; margin-bottom: 1.5rem; margin-top: 0;">COLD BEVERAGES</h4>
+                    <h4 style="color: var(--primary-dark); font-weight: 600;">COLD BEVERAGES</h4>
+
                     <div class="menu-item">
                         <h4>Iced Coffee <span class="menu-price">$4.00</span></h4>
-                        <p class="menu-description">Chilled signature blend with ice</p>
+                        <p class="menu-description">Chilled signature blend</p>
                     </div>
+
                     <div class="menu-item">
                         <h4>Cold Brew <span class="menu-price">$4.50</span></h4>
-                        <p class="menu-description">Smooth cold-steeped coffee concentrate</p>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Iced Latte <span class="menu-price">$4.75</span></h4>
-                        <p class="menu-description">Espresso with cold milk and ice</p>
-                    </div>
-                    <div class="menu-item">
-                        <h4>Café Frappé <span class="menu-price">$5.00</span></h4>
-                        <p class="menu-description">Blended coffee with whipped cream</p>
+                        <p class="menu-description">Cold-steeped concentrate</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section class="contact" id="contact">
         <div class="container">
             <h2>Get In Touch</h2>
+
             <form class="contact-form">
                 <input type="text" class="form-control" placeholder="Your Name" required>
                 <input type="email" class="form-control" placeholder="Your Email" required>
                 <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
                 <button type="submit" class="btn btn-primary-custom w-100">Send Message</button>
             </form>
+
             <div style="text-align: left; margin-top: 3rem; color: var(--secondary);">
-                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary-dark);">📍 Location:</strong> 123 Vintage Lane, Downtown</p>
-                <p style="margin-bottom: 0.5rem;"><strong style="color: var(--primary-dark);">📞 Phone:</strong> (555) 123-1984</p>
-                <p style="margin-bottom: 0;"><strong style="color: var(--primary-dark);">⏰ Hours:</strong> Mon-Fri 7AM-8PM | Sat-Sun 8AM-9PM</p>
+                <p><strong style="color: var(--primary-dark);">📍 Location:</strong> 123 Vintage Lane, Downtown</p>
+                <p><strong style="color: var(--primary-dark);">📞 Phone:</strong> (555) 123-1984</p>
+                <p><strong style="color: var(--primary-dark);">⏰ Hours:</strong> 7AM–8PM Daily</p>
             </div>
         </div>
     </section>
@@ -211,15 +243,19 @@
                 <a href="#menu">Menu</a>
                 <a href="#contact">Contact</a>
             </div>
+
             <div class="social-icons">
-                <a href="#" title="Facebook">f</a>
-                <a href="#" title="Instagram">📷</a>
-                <a href="#" title="Twitter">𝕏</a>
+                <a href="#">f</a>
+                <a href="#">📷</a>
+                <a href="#">𝕏</a>
             </div>
+
             <div class="divider"></div>
-            <p style="text-align: center; margin: 0; color: rgba(255, 255, 255, 0.7); font-size: 0.9rem;">&copy; 2025 Café 1984. All rights reserved.</p>
+
+            <p style="text-align:center; color:rgba(255,255,255,0.7); font-size:0.9rem;">© 2025 Café 1984. All rights reserved.</p>
         </div>
     </footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>

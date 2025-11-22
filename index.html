@@ -1,10 +1,581 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tung Tung Tung</title>
+    <title>Café 1984 - Premium Coffee Experience</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-dark: #2a1810;
+            --primary-brown: #6f4e37;
+            --accent-gold: #d4af37;
+            --light-cream: #f5f1e8;
+            --warm-tan: #c9b8a3;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--light-cream);
+            color: var(--primary-dark);
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary-dark);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-gold) !important;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: var(--light-cream) !important;
+            margin: 0 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--accent-gold) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-brown) 100%);
+            color: var(--light-cream);
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(212,175,55,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            color: var(--warm-tan);
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border: none;
+            padding: 12px 30px;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(212,175,55,0.3);
+            color: var(--primary-dark);
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: var(--light-cream);
+        }
+
+        .about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--primary-dark);
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .products h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+
+        .product-card {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: var(--light-cream);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border-color: var(--accent-gold);
+        }
+
+        .product-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            color: var(--primary-brown);
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-brown) 100%);
+            color: var(--light-cream);
+        }
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-right: 2rem;
+            min-width: 60px;
+        }
+
+        .feature-item h3 {
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Menu Preview */
+        .menu {
+            padding: 80px 0;
+            background-color: var(--light-cream);
+        }
+
+        .menu h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+
+        .menu-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--warm-tan);
+        }
+
+        .menu-item h4 {
+            color: var(--primary-brown);
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+
+        .menu-price {
+            color: var(--accent-gold);
+            font-weight: bold;
+            float: right;
+        }
+
+        .menu-description {
+            color: #666;
+            font-size: 0.95rem;
+            clear: both;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background-color: #fff;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: var(--primary-dark);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            border: 2px solid var(--warm-tan);
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control:focus {
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 0.2rem rgba(212,175,55,0.25);
+            background-color: var(--light-cream);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--light-cream);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        footer h3 {
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--warm-tan);
+            text-decoration: none;
+            margin: 0 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .social-icons {
+            margin: 2rem 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            border-radius: 50%;
+            line-height: 40px;
+            margin: 0 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.1);
+        }
+
+        .divider {
+            height: 1px;
+            background-color: var(--warm-tan);
+            margin: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about h2,
+            .products h2,
+            .features h2,
+            .menu h2,
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+
+            .product-card {
+                margin-bottom: 2rem;
+            }
+
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .menu-price {
+                float: none;
+                display: block;
+                margin-top: 0.5rem;
+            }
+
+            .footer-links a {
+                display: block;
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Gia Nghĩa</h1>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">☕ CAFÉ 1984</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Welcome to Café 1984</h1>
+            <p>Experience the perfect blend of classic ambiance and exceptional coffee</p>
+            <button class="btn btn-gold">Explore Our Menu</button>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <img src="https://images.unsplash.com/photo-1495474472645-4c71bcdd2d18?w=500&h=500&fit=crop" alt="Coffee" class="img-fluid rounded" style="max-width: 100%; height: auto;">
+                </div>
+                <div class="col-md-6">
+                    <h2>Our Story</h2>
+                    <p class="about-text">
+                        Since 1984, Café 1984 has been a sanctuary for coffee lovers and culture enthusiasts. 
+                        We believe in crafting not just coffee, but memories. Our vintage aesthetic combined with modern 
+                        sensibilities creates the perfect environment to work, socialize, or simply enjoy a moment of peace.
+                    </p>
+                    <p class="about-text">
+                        Every bean is carefully sourced from sustainable farms, roasted in small batches, 
+                        and prepared with precision by our passionate baristas.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2>Our Specialties</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <div class="product-icon">☕</div>
+                        <h3>Signature Blend</h3>
+                        <p>Our house specialty - a perfectly balanced espresso-based coffee that defines our brand.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <div class="product-icon">🥐</div>
+                        <h3>Pastries & Bakes</h3>
+                        <p>Fresh pastries baked daily in our kitchen, perfectly paired with your favorite brew.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="product-card">
+                        <div class="product-icon">🍰</div>
+                        <h3>Seasonal Treats</h3>
+                        <p>Limited edition desserts and seasonal drinks crafted with the finest ingredients.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <h3>Premium Quality</h3>
+                            <p>Single-origin beans sourced from the world's best coffee regions.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <h3>Artistic Ambiance</h3>
+                            <p>Vintage decor and modern art create an inspiring atmosphere.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <h3>Expert Baristas</h3>
+                            <p>Our certified baristas craft each cup with passion and precision.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">✓</div>
+                        <div>
+                            <h3>Community Focus</h3>
+                            <p>A gathering place for creatives, professionals, and coffee enthusiasts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Preview -->
+    <section class="menu" id="menu">
+        <div class="container">
+            <h2>Menu Preview</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <h4 style="color: var(--primary-brown); font-weight: bold; margin-top: 2rem;">HOT BEVERAGES</h4>
+                    <div class="menu-item">
+                        <h4>Espresso <span class="menu-price">$3.50</span></h4>
+                        <p class="menu-description">Double shot of our signature blend</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Cappuccino <span class="menu-price">$4.50</span></h4>
+                        <p class="menu-description">Perfect balance of espresso, steamed milk & foam</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Latte <span class="menu-price">$4.50</span></h4>
+                        <p class="menu-description">Smooth espresso with velvety steamed milk</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Americano <span class="menu-price">$3.75</span></h4>
+                        <p class="menu-description">Espresso with hot water for a classic taste</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h4 style="color: var(--primary-brown); font-weight: bold; margin-top: 2rem;">COLD BEVERAGES</h4>
+                    <div class="menu-item">
+                        <h4>Iced Coffee <span class="menu-price">$4.00</span></h4>
+                        <p class="menu-description">Chilled signature blend with ice</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Cold Brew <span class="menu-price">$4.50</span></h4>
+                        <p class="menu-description">Smooth cold-steeped coffee concentrate</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Iced Latte <span class="menu-price">$4.75</span></h4>
+                        <p class="menu-description">Espresso with cold milk and ice</p>
+                    </div>
+                    <div class="menu-item">
+                        <h4>Café Frappé <span class="menu-price">$5.00</span></h4>
+                        <p class="menu-description">Blended coffee with whipped cream</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 2rem;">
+                <button class="btn btn-gold">View Full Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <form class="contact-form">
+                <input type="text" class="form-control" placeholder="Your Name" required>
+                <input type="email" class="form-control" placeholder="Your Email" required>
+                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-gold w-100">Send Message</button>
+            </form>
+            <div style="text-align: center; margin-top: 3rem; color: #666;">
+                <p><strong>📍 Location:</strong> 123 Vintage Lane, Downtown</p>
+                <p><strong>📞 Phone:</strong> (555) 123-1984</p>
+                <p><strong>⏰ Hours:</strong> Mon-Fri 7AM-8PM | Sat-Sun 8AM-9PM</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3>☕ Café 1984</h3>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#menu">Menu</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="social-icons">
+                <a href="#" title="Facebook">f</a>
+                <a href="#" title="Instagram">📷</a>
+                <a href="#" title="Twitter">𝕏</a>
+            </div>
+            <div class="divider"></div>
+            <p>&copy; 2025 Café 1984. All rights reserved. | Crafted with ☕ and love</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

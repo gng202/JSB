@@ -1,3 +1,7 @@
+/* ============================
+   GLOBAL RESET & VARIABLES
+============================ */
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +9,6 @@
 }
 
 :root {
-  /* Updated color scheme to dark mode */
   --primary-dark: #0f0f0f;
   --secondary: #a0a0a0;
   --accent: #d4af37;
@@ -23,7 +26,10 @@ body {
   line-height: 1.6;
 }
 
-/* Updated navbar with dark mode */
+/* ============================
+   NAVBAR
+============================ */
+
 .navbar {
   background-color: var(--primary-dark);
   border-bottom: 1px solid var(--border-color);
@@ -48,7 +54,74 @@ body {
   color: var(--accent) !important;
 }
 
-/* Dark hero section */
+/* ============================
+   SLIDER (NEW SECTION)
+============================ */
+
+.slider-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-img {
+  height: 85vh;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(60%);
+  transition: transform 4s ease;
+}
+
+.carousel-item.active .slider-img {
+  transform: scale(1.08);
+}
+
+.carousel-item {
+  transition: opacity 1.2s ease-in-out;
+}
+
+.slider-section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background: linear-gradient(transparent, var(--primary-dark));
+  z-index: 2;
+}
+
+.slider-heading {
+  position: absolute;
+  z-index: 3;
+  bottom: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--white);
+}
+
+.slider-heading h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+.slider-heading p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.slider-control {
+  filter: invert(1) brightness(80%);
+  width: 45px !important;
+  height: 45px !important;
+}
+
+/* ============================
+   HERO SECTION
+============================ */
+
 .hero {
   background: var(--primary-dark);
   color: var(--white);
@@ -88,7 +161,10 @@ body {
   transform: translateY(-2px);
 }
 
-/* Dark about section */
+/* ============================
+   ABOUT SECTION
+============================ */
+
 .about {
   padding: 80px 0;
   background-color: var(--light-bg);
@@ -112,7 +188,10 @@ body {
   object-fit: cover;
 }
 
-/* Dark product cards */
+/* ============================
+   PRODUCT CARDS
+============================ */
+
 .products {
   padding: 80px 0;
   background-color: var(--primary-dark);
@@ -159,7 +238,10 @@ body {
   font-size: 0.95rem;
 }
 
-/* Dark features section */
+/* ============================
+   FEATURES
+============================ */
+
 .features {
   padding: 80px 0;
   background-color: var(--light-bg);
@@ -199,7 +281,10 @@ body {
   margin: 0;
 }
 
-/* Dark menu section */
+/* ============================
+   MENU SECTION
+============================ */
+
 .menu {
   padding: 80px 0;
   background-color: var(--primary-dark);
@@ -242,7 +327,10 @@ body {
   font-size: 0.9rem;
 }
 
-/* Dark contact form */
+/* ============================
+   CONTACT
+============================ */
+
 .contact {
   padding: 80px 0;
   background-color: var(--light-bg);
@@ -280,6 +368,10 @@ body {
 .form-control::placeholder {
   color: var(--secondary);
 }
+
+/* ============================
+   FOOTER
+============================ */
 
 footer {
   background-color: #0a0a0a;
@@ -341,7 +433,10 @@ footer h3 {
   margin: 2rem 0;
 }
 
-/* Responsive */
+/* ============================
+   RESPONSIVE
+============================ */
+
 @media (max-width: 768px) {
   .hero h1 {
     font-size: 2.5rem;
@@ -383,5 +478,13 @@ footer h3 {
 
   .menu-price {
     margin-top: 0.5rem;
+  }
+
+  .slider-heading h1 {
+    font-size: 2.2rem;
+  }
+
+  .slider-heading p {
+    font-size: 1rem;
   }
 }

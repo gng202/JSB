@@ -4,113 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Café 1984 - Premium Coffee Experience</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav>
-        <div class="nav-container">
-            <h1>☕ Café 1984</h1>
-            <div class="nav-links">
-                <a href="index.html">
-                    <span class="lang-en">Home</span>
-                    <span class="lang-vi">Trang Chủ</span>
-                </a>
-                <a href="#specialties">
-                    <span class="lang-en">Menu</span>
-                    <span class="lang-vi">Thực Đơn</span>
-                </a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>
-                <span class="lang-en">Premium Artisan Coffee</span>
-                <span class="lang-vi">Cà Phê Thủ Công Cao Cấp</span>
-            </h2>
-            <p>
-                <span class="lang-en">Handcrafted flavors. Minimalist space. Timeless vibe.</span>
-                <span class="lang-vi">Hương vị tuyệt hảo. Không gian tối giản. Vibe vượt thời gian.</span>
-            </p>
-            <a href="#specialties" class="cta-btn">
-                <span class="lang-en">Explore Menu</span>
-                <span class="lang-vi">Khám Phá Thực Đơn</span>
-            </a>
+<nav>
+    <div class="nav-container">
+        <h1>☕ Café 1984</h1>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="#specialties">Menu</a>
         </div>
-    </section>
-
-    <!-- Specialties Section -->
-    <section class="specialties" id="specialties">
-        <div class="specialties-container">
-            <h3>
-                <span class="lang-en">Our Specialties</span>
-                <span class="lang-vi">Đặc Sản Của Chúng Tôi</span>
-            </h3>
-            <div class="products-grid">
-                <a href="coffee-detail.html" class="product-card">
-                    <div class="product-emoji">☕</div>
-                    <h4>
-                        <span class="lang-en">Signature Blend</span>
-                        <span class="lang-vi">Hỗn Hợp Đặc Biệt</span>
-                    </h4>
-                    <p>
-                        <span class="lang-en">Discover our exceptional coffee selection</span>
-                        <span class="lang-vi">Khám phá lựa chọn cà phê ngoạn mục của chúng tôi</span>
-                    </p>
-                    <span class="product-link">
-                        <span class="lang-en">Learn More →</span>
-                        <span class="lang-vi">Tìm Hiểu Thêm →</span>
-                    </span>
-                </a>
-                <a href="pastry-detail.html" class="product-card">
-                    <div class="product-emoji">🥐</div>
-                    <h4>
-                        <span class="lang-en">Fresh Pastries</span>
-                        <span class="lang-vi">Bánh Nướng Tươi</span>
-                    </h4>
-                    <p>
-                        <span class="lang-en">Hand-baked every morning</span>
-                        <span class="lang-vi">Nướng bằng tay mỗi sáng</span>
-                    </p>
-                    <span class="product-link">
-                        <span class="lang-en">Learn More →</span>
-                        <span class="lang-vi">Tìm Hiểu Thêm →</span>
-                    </span>
-                </a>
-                <a href="treats-detail.html" class="product-card">
-                    <div class="product-emoji">🍰</div>
-                    <h4>
-                        <span class="lang-en">Seasonal Treats</span>
-                        <span class="lang-vi">Bánh Seasonal</span>
-                    </h4>
-                    <p>
-                        <span class="lang-en">Limited edition flavors</span>
-                        <span class="lang-vi">Hương vị phiên bản giới hạn</span>
-                    </p>
-                    <span class="product-link">
-                        <span class="lang-en">Learn More →</span>
-                        <span class="lang-vi">Tìm Hiểu Thêm →</span>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Language Switcher -->
-    <div class="language-switcher">
-        <a href="?lang=en" onclick="setLanguage('en'); return false;">English</a>
-        <a href="?lang=vi" onclick="setLanguage('vi'); return false;">Tiếng Việt</a>
     </div>
+</nav>
 
-    <style>
-        /* Wait, user said HTML and CSS only, no JavaScript */
-        /* Removing the setLanguage function - language switching will be via simple links */
-    </style>
+<section class="hero">
+    <div class="hero-content">
+        <h2>Premium Artisan Coffee</h2>
+        <p>Handcrafted flavors. Minimalist space. Timeless vibe.</p>
+        <a href="#specialties" class="cta-btn">Explore Menu</a>
+    </div>
+</section>
+
+<section class="specialties" id="specialties">
+    <div class="specialties-container">
+        <h3>Our Specialties</h3>
+
+        <div class="products-grid">
+
+            <a href="coffee-detail.html" class="product-card">
+                <div class="product-emoji">☕</div>
+                <h4>Signature Blend</h4>
+                <p>Discover our exceptional coffee selection</p>
+                <span class="product-link">Learn More →</span>
+            </a>
+
+            <a href="pastry-detail.html" class="product-card">
+                <div class="product-emoji">🥐</div>
+                <h4>Fresh Pastries</h4>
+                <p>Hand-baked every morning</p>
+                <span class="product-link">Learn More →</span>
+            </a>
+
+            <a href="treats-detail.html" class="product-card">
+                <div class="product-emoji">🍰</div>
+                <h4>Seasonal Treats</h4>
+                <p>Limited edition flavors</p>
+                <span class="product-link">Learn More →</span>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+<div class="language-switcher">
+    <a href="index.html">English</a>
+    <a href="index-vi.html">Tiếng Việt</a>
+</div>
+
 </body>
 </html>
